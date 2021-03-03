@@ -69,4 +69,10 @@ Layer):** `controller để điều hướng các request đến business logic.
 
 - **Design Pattern:** `https://itviec.com/blog/design-pattern/`
 - **Fixtures:** sử dụng fixtures để tạo dữ liệu giả `https://viblo.asia/p/symfony2-doctrine-model-va-data-fixtures-ZK1ov1ENv5b9`.
-- **SLF4J:** `https://stackjava.com/spring/code-vi-du-spring-boot-logging.html`
+- **SLF4J:** `https://stackjava.com/spring/code-vi-du-spring-boot-logging.html`.
+- **CI/CD Pipeline:** https://viblo.asia/p/cicd-pipeline-4P856OXOKY3 https://cloudfun.vn/threads/xay-dung-quy-trinh-trien-khai-tu-dong-cho-kubernetes-bang-cicd.282/
+- **Jenkins:** `Jenkins là một nhánh của Hudson và là một hệ thống xây dựng liên tục cho các dự án phần mềm.` `Máy chủ tự động hóa mã nguồn mở hàng đầu, Jenkins cung cấp hàng trăm plugin để hỗ trợ xây dựng, triển khai và tự động hóa bất kỳ dự án nào.`
+- **Screwdriver:** https://docs.screwdriver.cd/user-guide/quickstart https://github.com/screwdriver-cd/screwdriver
+ +  `là một dịch vụ độc lập, có thể cắm để giúp bạn xây dựng, kiểm tra và liên tục cung cấp phần mềm bằng cách sử dụng các công nghệ container mới nhất.` 
+ +  `Đây screwdriver.yaml là tệp cấu hình duy nhất bạn cần để sử dụng Screwdriver. Trong đó, bạn sẽ xác định tất cả các bước cần thiết để phát triển, xây dựng và triển khai thành công ứng dụng của mình. `
+ +  `Kiến trúc của Screwdriver sử dụng các thành phần có thể cắm được bên dưới hood để cho phép bạn hoán đổi các phần phù hợp với cơ sở hạ tầng của mình.  Trao đổi trong Postgres cho Kho dữ liệu hoặc Jenkins cho Người thực thi.  Bạn thậm chí có thể chọn động một công cụ thực thi dựa trên nhu cầu của từng đường ống.`
