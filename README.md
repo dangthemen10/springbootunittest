@@ -35,9 +35,38 @@ Layer):** `controller để điều hướng các request đến business logic.
 
 **- Thư mục .gradle:** `là thư mục riêng của Gradle, không nên đụng tới hay exclude nó ra khỏi source code.`
 
-**-File build.gradle:** `Thư mục gốc chứa file build.gradle dùng để cấu hình dự án.`
+**-File build.gradle:** `Thư mục gốc chứa file build.gradle dùng để cấu hình dự án.` `file build.gradle chứa thông tin cấu hình gradle như plugin, repository, dependency…`
 
 **-File .gitignore:** `Thư mục gốc chứa file gitignore dùng để cấu hình dự án.`
 
+**- Kubernetes — Learn Sidecar Container Pattern**: `https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar`  `https://hocweb.vn/kubernetes-service-la-gi-tai-sao-phai-su-dung-kubernetes-phan-3/#580e`
 
+**-Thuật ngữ chuẩn hóa: ** `https://kubernetes.io/vi/docs/reference/glossary/?fundamental=true`
 
+***Sidecar**: `https://www.bbva.com/en/sidecar-pattern-in-security/` `https://blog.vietnamlab.vn/container-design-pattern/`
+ - **Nó là gì: **
+    + Mẫu sidecar được sử dụng để mở rộng và / hoặc cải thiện chức năng của một quy trình (ứng dụng chính) bằng cách chạy song song các quy trình phụ trợ khác mà hầu như không có sự ghép nối nào giữa chúng. Thay vì sử dụng thư viện để triển khai chức năng, chúng tôi sử dụng một số quy trình hoặc vùng chứa có chức năng này được tích hợp sẵn, điều này cung cấp cho chúng tôi khả năng cách ly và đóng gói tốt hơn. Trong thời gian chạy, sidecar chia sẻ cùng một vòng đời (nó bắt đầu và dừng với tiến trình chính) cũng như các tài nguyên máy tính khác (lưu trữ, mạng,…). Nó là một thành phần riêng biệt, với vòng đời phần mềm riêng, được nhóm của ứng dụng chính kết hợp vào thời điểm triển khai.
+- **Mô hình sidecar**:
+    + Vòng đời thời gian chạy giống nhau, nhưng cho phép cập nhật độc lập
+    + Quản lý phụ thuộc
+    + Không chia sẻ, không có vấn đề tích hợp
+    + Tính minh bạch (hầu như không bao giờ có), không có vấn đề tích hợp - Cạnh tranh tài nguyên
+- **Khi nào sử dụng nó?**
+    + Khi kiến trúc đa ngôn ngữ được hỗ trợ (và đang được sử dụng).
+    + Thành phần thuộc sở hữu của một nhóm từ xa
+    + Các vùng chứa chính và phụ đều được yêu cầu chạy trong cùng một máy chủ
+    + Ứng dụng chính không có cơ chế mở rộng
+    + Luôn có một vùng chứa orchestrator
+    + Khi cần cùng một vòng đời thời gian chạy và cập nhật riêng lẻ cùng một lúc
+      - Khi độ trễ là sự đánh đổi
+      - Khi chi phí tài nguyên không đáng có thì lợi thế của sự cô lập
+      - Khi ứng dụng và sidecar phải mở rộng quy mô khác nhau
+- **Trường hợp sử dụng:**
+  + Quản lý ứng dụng: Sidecar theo dõi môi trường để biết các thay đổi và khởi động lại hoặc thông báo cho ứng dụng chính để cập nhật cấu hình của nó.
+  + Các dịch vụ cơ sở hạ tầng (quản lý thông tin xác thực, quản lý cấu hình, DNS, bộ điều hợp, bảo mật, kiểm soát truy cập,…)
+  + Giám sát (tài nguyên, lưu lượng mạng,…)
+  + Bộ điều hợp giao thức.
+
+- **Design Pattern:** `https://itviec.com/blog/design-pattern/`
+- **Fixtures:** sử dụng fixtures để tạo dữ liệu giả `https://viblo.asia/p/symfony2-doctrine-model-va-data-fixtures-ZK1ov1ENv5b9`.
+- **SLF4J:** `https://stackjava.com/spring/code-vi-du-spring-boot-logging.html`
